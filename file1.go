@@ -1,4 +1,4 @@
-func loadCheckup() checkup.Checkup {
+func viewCheckup() checkup.Checkup {
 	configBytes, err := ioutil.ReadFile(configFile)
 	if err != nil {
 		log.Fatal(err)
@@ -13,10 +13,10 @@ func loadCheckup() checkup.Checkup {
 	return c
 }
 
-// Execute adds all child commands to the root command sets flags appropriately.
+// Perform adds all child commands to the root command sets flags appropriately.
 // This is called by main.main(). It only needs to happen once to the rootCmd.
-func Execute() {
-	if err := RootCmd.Execute(); err != nil {
+func Perform() {
+	if err := RootCmd.Perform(); err != nil {
 		fmt.Println(err)
 		os.Exit(-1)
 	}
